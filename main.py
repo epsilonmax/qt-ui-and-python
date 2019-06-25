@@ -22,8 +22,9 @@ class Form(QObject):
         self.window.show()
  
     def ok_handler(self):
-        language = 'None' if not self.line.text() else self.line.text()
-        print('Favorite language: {}'.format(language))
+        msgBox = QMessageBox()
+        msgBox.setText(self.line.text())
+        msgBox.exec_()
  
 if __name__ == '__main__':
     app = QApplication(sys.argv)
